@@ -18,6 +18,12 @@ set(SRC_FILES
         servo_pru.c
         tipwmss.h
         useful_functions.c
+        math/discrete_siso_filter.c
+        math/filters.c
+        math/linear_algebra.c
+        math/orientation_filters.h
+        math/quaternion.c
+        math/ring_buffer.c
     )
 
 add_library(bb_blue ${SRC_FILES})
