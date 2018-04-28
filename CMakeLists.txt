@@ -4,6 +4,11 @@ project(bb_blue_api)
 include_directories(libraries)
 add_subdirectory(libraries)
 
-add_executable(gyro_test examples/calibrate_gyro/calibrate_gyro.c)
+macro(add_exe NAME)
+    add_executable(${NAME} examples/${NAME}/${NAME}.c)
+    target_link_libraries(${NAME} bb_blue pthread m)
+endmacro()
 
-target_link_libraries(gyro_test bb_blue pthread m)
+add_exe(calibrate_gyro)
+add_exe(test_imu)
+
